@@ -11,10 +11,10 @@
 	* [减少不比较的创建](#减少不比较的创建)
 		* [错误实例](#错误实例)
 		* [最佳实践](#最佳实践)
-	* [优先使用Key](#优先使用key)
-	* [优雅的删除属性](#优雅的删除属性)
+	* [优先使用Key](#优先使用key)
+	* [优雅的删除属性](#优雅的删除属性)
 	* [高阶组件](#高阶组件)
-		* [操作prop](#操作prop)
+		* [操作prop](#操作prop)
 			* [代理方式](#代理方式)
 			* [继承方式](#继承方式)
 		* [访问ref](#访问ref)
@@ -22,7 +22,7 @@
 			* [继承方式](#继承方式-1)
 		* [抽取状态](#抽取状态)
 		* [包装组件](#包装组件)
-* [生命周期](#生命周期)
+* [生命周期](#生命周期)
 	* [组件更新](#组件更新)
 
 <!-- /code_chunk_output -->
@@ -54,12 +54,12 @@ const fooStyle={color:'red'};
 <Foo style={fooStyle}>
 ```
 
-### 优先使用Key
+### 优先使用Key
 
-### 优雅的删除属性
+### 优雅的删除属性
 
-通过ES6语法过滤对象属性
-避免`user`传给`<Foo/>`
+通过ES6语法过滤对象属性
+避免`user`传给`<Foo/>`
 
 ```js
 const {user,...otherProps}=this.props;
@@ -69,12 +69,12 @@ const {user,...otherProps}=this.props;
 ### 高阶组件
 
 高阶组件(Higher Order Component,HOC)
-高价组件返回的是**组件**,而不是函数,
-redux 中 `connect` 不是一个高阶组件,`connect` 返回的是**函数**
-`connect` **返回的函数** 才是高阶组件
-
+高价组件返回的是**组件**,而不是函数,
+redux 中 `connect` 不是一个高阶组件,`connect` 返回的是**函数**
+`connect` **返回的函数** 才是高阶组件
 
-#### 操作prop
+
+#### 操作prop
 
 ##### 代理方式
 
@@ -107,7 +107,7 @@ const addNewPropsHOC=(WrappedComponent)=>{
 
 ```
 
-`this.props` 直接修改不是一个明智的做法,可能会产生不可预知的结果
+`this.props` 直接修改不是一个明智的做法,可能会产生不可预知的结果
 
 通过`React.cloneElement`重新绘制组件
 
@@ -126,9 +126,9 @@ const modifyPropsHOC = (WrappedComponent)=>{
 }
 ```
 
-代理方式和继承方式最大的区别是**使用被包裹组件的方式**.
+代理方式和继承方式最大的区别是**使用被包裹组件的方式**.
 
-代理方式下`WrappedComponent`经历了一个完成的生命周期,但在继承方式下 `super.render` 只是一个生命周期的一个函数而已;在代理方式下产生的新组件和参数组件是两个不同的组件,一次渲染,两个组件都要经历各自的生命周期,在继承方式下两者合二为一,只有一个生命周期
+代理方式下`WrappedComponent`经历了一个完成的生命周期,但在继承方式下 `super.render` 只是一个生命周期的一个函数而已;在代理方式下产生的新组件和参数组件是两个不同的组件,一次渲染,两个组件都要经历各自的生命周期,在继承方式下两者合二为一,只有一个生命周期
 
 #### 访问ref
 
@@ -209,7 +209,7 @@ const NewComponent=styleHOC(DemoComponent,style);
 
 ```
 
-## 生命周期
+## 生命周期
 
 ### 组件更新
 
@@ -220,4 +220,4 @@ const NewComponent=styleHOC(DemoComponent,style);
 5. componentDidUpdate
 
 参见
-><<深入浅出React和Redux>>
+><<深入浅出React和Redux>>
