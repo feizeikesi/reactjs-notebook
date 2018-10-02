@@ -22,7 +22,7 @@
 		* [继承方式](#继承方式)
 			* [操作props](#操作props-1)
 			* [操作生命周期函数](#操作生命周期函数)
-		* [高阶组件的显示名](#高阶组件的显示名)
+		* [高阶组件的显示名](#高阶组件的显示名)
 * [生命周期](#生命周期)
 	* [组件更新](#组件更新)
 
@@ -225,7 +225,7 @@ const onlyForLoggedinHOC=(WrappendComponent)=>{
 }
 ```
 
-缓存组件
+缓存组件
 
 ```js
 const cacheHOC=(WrappedComponent) => {
@@ -237,9 +237,9 @@ const cacheHOC=(WrappedComponent) => {
 }
 ```
 
-#### 高阶组件的显示名
+#### 高阶组件的显示名
 
-重新定义`connect`显示名
+重新定义`connect`显示名
 
 ```js
     function getDisplayName(WrappedComponent){
